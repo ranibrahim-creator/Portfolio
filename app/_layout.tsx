@@ -41,7 +41,7 @@ function RootLayoutNav() {
           primary: colors.tint,
         },
       }}>
-      <View style={[styles.shell, Platform.OS === 'web' && { backgroundColor: colorScheme === 'dark' ? '#0B100E' : '#D7E2DA' }]}>
+      <View style={[styles.shell, Platform.OS === 'web' && { backgroundColor: colorScheme === 'dark' ? '#0F1419' : '#E5E9F0' }]}>
         <View style={[styles.frame, Platform.OS === 'web' && styles.webFrame]}>
           <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
             <Stack.Screen name="(tabs)" />

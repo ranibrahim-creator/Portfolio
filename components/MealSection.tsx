@@ -6,11 +6,11 @@ import { useTheme } from '@/components/useTheme';
 import { formatKcal } from '@/lib/format';
 import type { DiaryEntry } from '@/types';
 
-const MEAL_META: Record<string, { label: string; icon: keyof typeof Ionicons.glyphMap }> = {
-  breakfast: { label: 'Breakfast', icon: 'sunny-outline' },
-  lunch: { label: 'Lunch', icon: 'restaurant-outline' },
-  dinner: { label: 'Dinner', icon: 'moon-outline' },
-  snacks: { label: 'Snacks', icon: 'nutrition-outline' },
+const MEAL_META: Record<string, { label: string }> = {
+  breakfast: { label: 'Breakfast' },
+  lunch: { label: 'Lunch' },
+  dinner: { label: 'Dinner' },
+  snacks: { label: 'Snacks' },
 };
 
 type Props = {
@@ -26,133 +26,108 @@ export function MealSection({ meal, entries, onAdd, onRemove }: Props) {
   const calories = entries.reduce((sum, entry) => sum + entry.calories, 0);
 
   return (
-    <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.border }]}>
-      <View style={styles.header}>
-        <View style={styles.titleRow}>
-          <View style={[styles.iconWrap, { backgroundColor: colors.tintSoft }]}>
-            <Ionicons name={meta.icon} size={16} color={colors.tint} />
+    <View style={[styles.card, { borderColor: colors.border }]}>
+      <View style={[styles.header, { borderBottomColor: colors.border }]}>
+        <Text style={[styles.title, { color: colors.text }]}>{meta.label}</Text>
+        <Text style={[styles.headerKcal, { color: colors.text }]}>{formatKcal(calories)}</Text>
+      </View>
+
+      {entries.map((entry) => (
+        <View key={entry.id} style={[styles.entry, { borderBottomColor: colors.hairline }]}>
+          <View style={styles.entryText}>
+            <Text style={[styles.entryName, { color: colors.text }]} numberOfLines={1}>
+              {entry.name}
+            </Text>
+            <Text style={[styles.entryMeta, { color: colors.muted }]} numberOfLines={1}>
+              {entry.servings === 1 ? entry.servingLabel : `${entry.servings} × ${entry.servingLabel}`}
+            </Text>
           </View>
-          <Text style={[styles.title, { color: colors.text }]}>{meta.label}</Text>
-        </View>
-        <View style={styles.headerRight}>
-          <Text style={[styles.kcal, { color: colors.muted }]}>{formatKcal(calories)} kcal</Text>
+          <Text style={[styles.entryKcal, { color: colors.text }]}>{formatKcal(entry.calories)}</Text>
           <Pressable
             onPress={() => {
               Haptics.selectionAsync();
-              onAdd();
+              onRemove(entry.id);
             }}
-            hitSlop={8}
-            style={[styles.addBtn, { backgroundColor: colors.tint }]}>
-            <Ionicons name="add" size={18} color={colors.inverted} />
+            hitSlop={10}
+            style={styles.remove}>
+            <Ionicons name="close" size={16} color={colors.placeholder} />
           </Pressable>
         </View>
-      </View>
+      ))}
 
-      {entries.length === 0 ? (
-        <Text style={[styles.empty, { color: colors.muted }]}>Nothing logged yet</Text>
-      ) : (
-        entries.map((entry, index) => (
-          <View
-            key={entry.id}
-            style={[
-              styles.entry,
-              index < entries.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
-            ]}>
-            <View style={styles.entryText}>
-              <Text style={[styles.entryName, { color: colors.text }]}>{entry.name}</Text>
-              <Text style={[styles.entryMeta, { color: colors.muted }]}>
-                {entry.servings === 1 ? entry.servingLabel : `${entry.servings} × ${entry.servingLabel}`}
-              </Text>
-            </View>
-            <Text style={[styles.entryKcal, { color: colors.text }]}>{formatKcal(entry.calories)}</Text>
-            <Pressable
-              onPress={() => {
-                Haptics.selectionAsync();
-                onRemove(entry.id);
-              }}
-              hitSlop={10}
-              style={styles.remove}>
-              <Ionicons name="close" size={16} color={colors.muted} />
-            </Pressable>
-          </View>
-        ))
-      )}
+      <Pressable
+        onPress={() => {
+          Haptics.selectionAsync();
+          onAdd();
+        }}
+        style={({ pressed }) => [styles.addRow, pressed && { backgroundColor: colors.surfaceMuted }]}>
+        <Ionicons name="add-circle" size={22} color={colors.tint} />
+        <Text style={[styles.addLabel, { color: colors.tint }]}>Add Food</Text>
+      </Pressable>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 20,
-    borderWidth: StyleSheet.hairlineWidth,
-    paddingHorizontal: 16,
-    paddingTop: 14,
-    paddingBottom: 8,
+    backgroundColor: 'transparent',
+    borderTopWidth: StyleSheet.hairlineWidth,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 8,
-  },
-  titleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-  },
-  iconWrap: {
-    width: 28,
-    height: 28,
-    borderRadius: 9,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal: 16,
+    height: 48,
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   title: {
-    fontSize: 16,
-    fontWeight: '700',
-  },
-  headerRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-  },
-  kcal: {
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: '600',
+    letterSpacing: -0.2,
   },
-  addBtn: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  empty: {
-    fontSize: 13,
-    paddingVertical: 10,
+  headerKcal: {
+    fontSize: 16,
+    fontWeight: '600',
+    fontVariant: ['tabular-nums'],
   },
   entry: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 12,
+    paddingHorizontal: 16,
+    minHeight: 64,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     gap: 8,
   },
   entryText: {
     flex: 1,
   },
   entryName: {
-    fontSize: 15,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '500',
   },
   entryMeta: {
-    fontSize: 12,
+    fontSize: 13,
     marginTop: 2,
   },
   entryKcal: {
-    fontSize: 14,
-    fontWeight: '700',
+    fontSize: 16,
+    fontWeight: '600',
+    fontVariant: ['tabular-nums'],
   },
   remove: {
     padding: 2,
+  },
+  addRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    paddingHorizontal: 16,
+    height: 52,
+  },
+  addLabel: {
+    fontSize: 15,
+    fontWeight: '600',
   },
 });

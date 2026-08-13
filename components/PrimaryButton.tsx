@@ -30,13 +30,13 @@ export function PrimaryButton({ label, onPress, disabled }: Props) {
 
 const styles = StyleSheet.create({
   btn: {
-    height: 54,
-    borderRadius: 16,
+    height: 48,
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
   },
   label: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: '600',
   },
 });

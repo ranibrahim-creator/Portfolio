@@ -29,7 +29,7 @@ export function WaterTracker({ count, goal, onChange }: Props) {
             style={[
               styles.glass,
               {
-                backgroundColor: filled ? colors.water : colors.surfaceMuted,
+                backgroundColor: filled ? colors.water : colors.surface2,
                 opacity: filled ? 1 : 0.7,
               },
             ]}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   glass: {
     flex: 1,
-    height: 28,
-    borderRadius: 8,
+    height: 10,
+    borderRadius: 4,
   },
 });

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { calorieTarget, goalsFromProfile, mifflinStJeor, scaleMacros, sumEntries, tdee } from './nutrition.ts';
+import { calorieTarget, calorieStatus, goalsFromProfile, mifflinStJeor, scaleMacros, sumEntries, tdee } from './nutrition.ts';
 
 test('mifflin-st jeor female sample', () => {
   assert.equal(mifflinStJeor('female', 65, 165, 28), 1380);
@@ -31,6 +31,14 @@ test('goalsFromProfile returns macros that fit calories', () => {
   });
   const kcalFromMacros = goals.proteinGoal * 4 + goals.carbsGoal * 4 + goals.fatGoal * 9;
   assert.ok(Math.abs(kcalFromMacros - goals.calorieGoal) < 20);
+});
+
+test('calorieStatus bands', () => {
+  assert.equal(calorieStatus(0, 1800), 'empty');
+  assert.equal(calorieStatus(400, 1800), 'under');
+  assert.equal(calorieStatus(1200, 1800), 'track');
+  assert.equal(calorieStatus(1750, 1800), 'near');
+  assert.equal(calorieStatus(1900, 1800), 'over');
 });
 
 test('scaleMacros and sumEntries', () => {

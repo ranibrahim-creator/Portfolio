@@ -103,7 +103,7 @@ export default function ProfileScreen() {
     <View style={[styles.screen, { backgroundColor: colors.background, paddingTop: insets.top }]}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.flex}>
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-          <Text style={[styles.title, { color: colors.text }]}>You</Text>
+          <Text style={[styles.title, { color: colors.text }]}>More</Text>
 
           <View style={[styles.hero, { backgroundColor: colors.surface, borderColor: colors.border }]}>
             <View style={[styles.avatar, { backgroundColor: colors.tint }]}>
@@ -248,11 +248,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '800',
-    letterSpacing: -0.6,
+    fontWeight: '700',
+    letterSpacing: -0.4,
   },
   hero: {
-    borderRadius: 24,
+    borderRadius: 16,
     borderWidth: StyleSheet.hairlineWidth,
     padding: 20,
     alignItems: 'center',
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
   card: {
-    borderRadius: 20,
+    borderRadius: 16,
     borderWidth: StyleSheet.hairlineWidth,
     padding: 16,
     gap: 12,
@@ -326,7 +326,7 @@ const styles = StyleSheet.create({
   },
   field: {
     height: 48,
-    borderRadius: 14,
+    borderRadius: 12,
     borderWidth: StyleSheet.hairlineWidth,
     paddingHorizontal: 14,
     fontSize: 16,

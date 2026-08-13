@@ -21,7 +21,7 @@ export function Chip({ label, selected, onPress }: Props) {
       style={[
         styles.chip,
         {
-          backgroundColor: selected ? colors.tint : colors.surface,
+          backgroundColor: selected ? colors.tint : colors.surfaceMuted,
           borderColor: selected ? colors.tint : colors.border,
         },
       ]}>
@@ -33,8 +33,8 @@ export function Chip({ label, selected, onPress }: Props) {
 const styles = StyleSheet.create({
   chip: {
     paddingHorizontal: 14,
-    height: 36,
-    borderRadius: 18,
+    height: 34,
+    borderRadius: 12,
     borderWidth: StyleSheet.hairlineWidth,
     alignItems: 'center',
     justifyContent: 'center',

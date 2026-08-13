@@ -46,7 +46,7 @@ export default function LogScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: colors.background, paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={[styles.title, { color: colors.text }]}>Log food</Text>
+          <Text style={[styles.title, { color: colors.text }]}>Add Food</Text>
         <Pressable
           onPress={() => router.push('/custom-food')}
           style={[styles.customBtn, { backgroundColor: colors.tintSoft }]}>
@@ -55,12 +55,12 @@ export default function LogScreen() {
         </Pressable>
       </View>
 
-      <View style={[styles.search, { backgroundColor: colors.surface, borderColor: colors.border }]}>
+      <View style={[styles.search, { backgroundColor: colors.surfaceMuted }]}>
         <Ionicons name="search" size={18} color={colors.muted} />
         <TextInput
           value={query}
           onChangeText={setQuery}
-          placeholder="Search chicken, yogurt, rice..."
+          placeholder="Search foods"
           placeholderTextColor={colors.muted}
           style={[styles.input, { color: colors.text }]}
           autoCorrect={false}
@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '800',
-    letterSpacing: -0.6,
+    fontWeight: '700',
+    letterSpacing: -0.4,
   },
   customBtn: {
     flexDirection: 'row',
@@ -162,17 +162,16 @@ const styles = StyleSheet.create({
     gap: 6,
     paddingHorizontal: 12,
     height: 36,
-    borderRadius: 18,
+    borderRadius: 12,
   },
   customLabel: {
     fontSize: 13,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   search: {
-    marginHorizontal: 20,
-    height: 48,
-    borderRadius: 16,
-    borderWidth: StyleSheet.hairlineWidth,
+    marginHorizontal: 16,
+    height: 44,
+    borderRadius: 12,
     paddingHorizontal: 14,
     flexDirection: 'row',
     alignItems: 'center',
@@ -192,7 +191,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   list: {
-    padding: 20,
+    padding: 16,
     paddingBottom: 32,
     gap: 18,
   },
@@ -206,7 +205,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   card: {
-    borderRadius: 20,
+    borderRadius: 16,
     borderWidth: StyleSheet.hairlineWidth,
     paddingHorizontal: 16,
   },

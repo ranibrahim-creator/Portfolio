@@ -74,6 +74,18 @@ export function sumEntries(entries: DiaryEntry[]): Macros {
   );
 }
 
+export type CalorieStatus = 'empty' | 'under' | 'track' | 'near' | 'over';
+
+export function calorieStatus(eaten: number, goal: number): CalorieStatus {
+  if (eaten <= 0) return 'empty';
+  if (goal <= 0) return 'track';
+  const ratio = eaten / goal;
+  if (ratio > 1) return 'over';
+  if (ratio >= 0.95) return 'near';
+  if (ratio >= 0.6) return 'track';
+  return 'under';
+}
+
 export const DEFAULT_PROFILE: Profile = {
   name: '',
   sex: 'female',

@@ -22,9 +22,9 @@ type Props = {
 export function MacroRow({ protein, carbs, fat, proteinGoal, carbsGoal, fatGoal }: Props) {
   const colors = useTheme();
   const macros: Macro[] = [
-    { label: 'Protein', value: protein, goal: proteinGoal, color: colors.protein },
     { label: 'Carbs', value: carbs, goal: carbsGoal, color: colors.carbs },
     { label: 'Fat', value: fat, goal: fatGoal, color: colors.fat },
+    { label: 'Protein', value: protein, goal: proteinGoal, color: colors.protein },
   ];
 
   return (
@@ -33,14 +33,14 @@ export function MacroRow({ protein, carbs, fat, proteinGoal, carbsGoal, fatGoal 
         const ratio = macro.goal <= 0 ? 0 : Math.min(macro.value / macro.goal, 1);
         return (
           <View key={macro.label} style={styles.item}>
+            <Text style={[styles.value, { color: colors.hero }]}>
+              {formatGrams(macro.value)}
+              <Text style={[styles.goal, { color: colors.muted }]}>/{formatGrams(macro.goal)}g</Text>
+            </Text>
             <View style={[styles.track, { backgroundColor: colors.ringTrack }]}>
               <View style={[styles.fill, { width: `${ratio * 100}%`, backgroundColor: macro.color }]} />
             </View>
             <Text style={[styles.label, { color: colors.muted }]}>{macro.label}</Text>
-            <Text style={[styles.value, { color: colors.text }]}>
-              {formatGrams(macro.value)}
-              <Text style={[styles.goal, { color: colors.muted }]}>/{formatGrams(macro.goal)}g</Text>
-            </Text>
           </View>
         );
       })}
@@ -51,33 +51,35 @@ export function MacroRow({ protein, carbs, fat, proteinGoal, carbsGoal, fatGoal 
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    gap: 12,
+    gap: 16,
   },
   item: {
     flex: 1,
   },
-  track: {
-    height: 6,
-    borderRadius: 99,
-    overflow: 'hidden',
-    marginBottom: 8,
-  },
-  fill: {
-    height: '100%',
-    borderRadius: 99,
-  },
-  label: {
-    fontSize: 11,
-    fontWeight: '600',
-    letterSpacing: 0.6,
-    textTransform: 'uppercase',
-    marginBottom: 2,
-  },
   value: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '700',
+    fontVariant: ['tabular-nums'],
+    marginBottom: 6,
   },
   goal: {
     fontWeight: '500',
+    fontSize: 12,
+  },
+  track: {
+    height: 6,
+    borderRadius: 3,
+    overflow: 'hidden',
+    marginBottom: 6,
+  },
+  fill: {
+    height: '100%',
+    borderRadius: 3,
+  },
+  label: {
+    fontSize: 11,
+    fontWeight: '700',
+    letterSpacing: 0.8,
+    textTransform: 'uppercase',
   },
 });

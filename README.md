@@ -4,12 +4,12 @@ A calorie counting mobile app built with [Expo](https://expo.dev) and React Nati
 
 ## Features
 
-- Daily calorie ring with remaining vs goal
-- Protein, carbs, and fat tracking
+- MyFitnessPal-style diary with calorie remaining ring
+- Month calendar with per-day calorie totals
+- Carbs, fat, and protein tracking
 - Breakfast, lunch, dinner, and snack logging
 - Searchable food database plus custom foods
 - Water tracker
-- Weekly diary, averages, and streaks
 - Mifflin–St Jeor calorie goal calculator
 - Local persistence on device
 
