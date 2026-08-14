@@ -77,7 +77,7 @@ export default function OnboardingPage() {
       {step === 0 && (
         <section className="flex flex-1 flex-col">
           <div className="flex flex-1 flex-col items-center justify-center text-center">
-            <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-accent text-white">
+            <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-white text-black">
               <Leaf className="h-7 w-7" />
             </div>
             <h1 className="text-2xl font-semibold">Nourish</h1>
@@ -233,7 +233,7 @@ function Reveal({ target, onContinue }: { target: number; onContinue: () => void
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="#FF8A5B"
+            stroke="#FF9F0A"
             strokeWidth={stroke}
             strokeLinecap="round"
             strokeDasharray={circumference}

@@ -10,7 +10,7 @@ type Props = {
   animateFromZero?: boolean;
 };
 
-const ACCENT = "#FF8A5B";
+const ACCENT = "#FF9F0A";
 const WARNING = "#E24B4A";
 
 export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true }: Props) {
@@ -68,8 +68,8 @@ export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true
         ) : (
           <>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Remaining</p>
-            <p className="text-4xl font-bold tabular-nums leading-none">{remaining.toLocaleString()}</p>
-            <p className="mt-1 text-sm text-muted">kcal</p>
+            <p className="text-4xl font-bold tabular-nums leading-none text-accent">{remaining.toLocaleString()}</p>
+            <p className="mt-1 text-sm text-accent">kcal</p>
           </>
         )}
       </div>

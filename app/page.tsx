@@ -61,7 +61,7 @@ export default function HomePage() {
       <div className="pointer-events-none sticky bottom-24 z-10 flex justify-end">
         <Link
           href="/log"
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white transition-colors duration-200 ease-out hover:bg-accent-hover"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black transition-colors duration-200 ease-out hover:bg-neutral-200"
           aria-label="Log food"
         >
           <Plus className="h-5 w-5" />

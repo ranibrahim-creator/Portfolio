@@ -9,9 +9,9 @@ type Props = {
 };
 
 const MACRO_COLORS: Record<MacroKey, string> = {
-  protein: "#2DC9A6",
-  carbs: "#9B8AFB",
-  fat: "#F5B942",
+  protein: "#64D2FF",
+  carbs: "#FF9F0A",
+  fat: "#BF5AF2",
 };
 
 export function MacroBar({ label, value, goal, macro, delay = 0 }: Props) {

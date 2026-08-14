@@ -22,7 +22,7 @@ export function GoalCard({ label, description, icon: Icon, selected, onSelect }:
         selected ? "border-accent bg-surface" : "border-border bg-surface"
       }`}
     >
-      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${selected ? "bg-accent text-white" : "border border-border text-foreground"}`}>
+      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${selected ? "bg-white text-black" : "border border-border text-foreground"}`}>
         <Icon className="h-5 w-5" />
       </div>
       <div>

@@ -32,7 +32,7 @@ export function RestaurantListItem({ item, meal }: { item: RestaurantItem; meal:
         <button
           type="button"
           onClick={quickAdd}
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-white transition-colors duration-200 ease-out hover:bg-accent-hover"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-black transition-colors duration-200 ease-out hover:bg-neutral-200"
           aria-label={`Add ${item.itemName}`}
         >
           {added ? <span className="text-sm font-semibold">✓</span> : <Plus className="h-4 w-4" />}

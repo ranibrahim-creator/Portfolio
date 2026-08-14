@@ -52,7 +52,7 @@ export function PortionSelector({ food }: { food: Food }) {
               setQty(item === "grams" ? food.gramsPerUnit : 1);
             }}
             className={`h-10 rounded-full text-sm font-semibold transition-colors duration-200 ease-out ${
-              mode === item ? "bg-accent text-white" : "text-muted"
+              mode === item ? "bg-white text-black" : "text-muted"
             }`}
           >
             {item === "local" ? "Local unit" : "Grams"}
