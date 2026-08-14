@@ -51,7 +51,7 @@ export function PortionSelector({ food }: { food: Food }) {
               setMode(item);
               setQty(item === "grams" ? food.gramsPerUnit : 1);
             }}
-            className={`h-10 rounded-full text-sm font-semibold transition-colors duration-200 ease-out ${
+            className={`h-12 rounded-full text-sm font-semibold transition-colors duration-200 ease-out ${
               mode === item ? "bg-white text-black" : "text-muted"
             }`}
           >
@@ -62,7 +62,7 @@ export function PortionSelector({ food }: { food: Food }) {
 
       <div>
         <Label>Quantity</Label>
-        <div className="mt-2 flex items-center justify-between rounded-xl border border-border px-3">
+        <div className="mt-2 flex items-center justify-between rounded-xl border border-border px-4">
           <button type="button" className="flex h-12 w-12 items-center justify-center" onClick={() => setQty((value) => Math.max(min, Math.round((value - step) * 10) / 10))}>
             <Minus className="h-4 w-4" />
           </button>
@@ -98,7 +98,7 @@ export function PortionSelector({ food }: { food: Food }) {
         </Select>
       </div>
 
-      <div className="sticky bottom-20 bg-background pt-2">
+      <div className="sticky bottom-32 bg-background pt-4">
         <Button
           className="w-full"
           onClick={() => {

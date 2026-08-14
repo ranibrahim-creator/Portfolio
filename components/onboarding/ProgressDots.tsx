@@ -9,8 +9,8 @@ export function ProgressDots({ total, current }: Props) {
       {Array.from({ length: total }, (_, index) => (
         <span
           key={index}
-          className={`h-1.5 rounded-full transition-all duration-200 ease-out ${
-            index === current ? "w-6 bg-accent" : "w-1.5 bg-border"
+          className={`h-2 rounded-full transition-all duration-200 ease-out ${
+            index === current ? "w-6 bg-accent" : "w-2 bg-border"
           }`}
         />
       ))}

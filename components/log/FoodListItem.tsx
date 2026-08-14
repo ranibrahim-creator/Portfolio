@@ -9,7 +9,7 @@ export function FoodListItem({ food, meal }: { food: Food; meal?: string }) {
   return (
     <Link
       href={href}
-      className="flex items-center justify-between rounded-xl border border-border bg-surface p-5 transition-colors duration-200 ease-out hover:border-accent"
+      className="flex items-center justify-between rounded-xl border border-border bg-surface p-6 transition-colors duration-200 ease-out hover:border-accent"
     >
       <div>
         <p className="font-medium">{food.name}</p>

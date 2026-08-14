@@ -61,22 +61,22 @@ function LogScreen() {
   const favoriteFoods = favorites.map((id) => mockFoods.find((food) => food.id === id)).filter(Boolean);
 
   return (
-    <main className="px-5 pb-28 pt-6">
+    <main className="px-6 pb-32 pt-6">
       <h1 className="text-2xl font-semibold">Log food</h1>
       <FoodSearchBar value={query} onChange={setQuery} onScan={() => setScanOpen(true)} />
 
-      <Tabs defaultValue="local" className="mt-2">
-        <TabsList className="grid h-auto w-full grid-cols-4">
-          <TabsTrigger value="local" className="px-1.5 text-[11px]">
+      <Tabs defaultValue="local">
+        <TabsList className="grid h-12 w-full grid-cols-4">
+          <TabsTrigger value="local" className="px-2 text-xs">
             Local Dishes
           </TabsTrigger>
-          <TabsTrigger value="recents" className="px-1.5 text-[11px]">
+          <TabsTrigger value="recents" className="px-2 text-xs">
             Recents
           </TabsTrigger>
-          <TabsTrigger value="restaurants" className="px-1.5 text-[11px]">
+          <TabsTrigger value="restaurants" className="px-2 text-xs">
             Restaurants
           </TabsTrigger>
-          <TabsTrigger value="favorites" className="px-1.5 text-[11px]">
+          <TabsTrigger value="favorites" className="px-2 text-xs">
             Favorites
           </TabsTrigger>
         </TabsList>
@@ -88,7 +88,7 @@ function LogScreen() {
         <TabsContent value="recents" className="space-y-2">
           {recentFoods.map((food) => food && <FoodListItem key={food.id} food={food} meal={mealParam ?? undefined} />)}
         </TabsContent>
-        <TabsContent value="restaurants" className="space-y-5">
+        <TabsContent value="restaurants" className="space-y-6">
           {restaurantGroups.map(([restaurantName, items]) => (
             <section key={restaurantName} className="space-y-2">
               <h2 className="px-1 text-xs font-medium uppercase tracking-[0.14em] text-muted">{restaurantName}</h2>

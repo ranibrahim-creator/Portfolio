@@ -22,7 +22,7 @@ function FoodDetail() {
   if (!food) notFound();
 
   return (
-    <main className="px-5 pb-8 pt-6">
+    <main className="px-6 pb-32 pt-6">
       <Link href="/log" className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border">
         <ArrowLeft className="h-5 w-5" />
       </Link>

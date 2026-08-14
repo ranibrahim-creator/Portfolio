@@ -23,7 +23,7 @@ export function MealSection({ meal, entries }: { meal: MealType; entries: LogEnt
   const calories = entries.reduce((sum, entry) => sum + entry.calories, 0);
 
   return (
-    <section className="rounded-xl border border-border bg-surface p-5">
+    <section className="rounded-xl border border-border bg-surface p-6">
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
@@ -66,7 +66,7 @@ export function MealSection({ meal, entries }: { meal: MealType; entries: LogEnt
 function SwipeRow({ children, onDelete }: { children: ReactNode; onDelete: () => void }) {
   return (
     <div className="relative overflow-hidden rounded-xl">
-      <div className="absolute inset-y-0 right-0 flex w-16 items-center justify-center bg-red-500">
+      <div className="absolute inset-y-0 right-0 flex w-16 items-center justify-center bg-warning">
         <Trash2 className="h-4 w-4 text-white" />
       </div>
       <motion.div

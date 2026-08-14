@@ -27,11 +27,11 @@ export default function ProfilePage() {
   };
 
   return (
-    <main className="px-5 pb-28 pt-6">
+    <main className="px-6 pb-32 pt-6">
       <h1 className="text-2xl font-semibold">Profile</h1>
-      <p className="mt-1 text-sm text-muted">{user.name} · Cairo</p>
+      <p className="mt-2 text-sm text-muted">{user.name} · Cairo</p>
 
-      <section className="mt-6 space-y-4 rounded-xl border border-border bg-surface p-5">
+      <section className="mt-6 space-y-4 rounded-xl border border-border bg-surface p-6">
         <Field label="Goal">
           <Select value={user.goal} onValueChange={(value) => recalc({ goal: value as Goal })}>
             <SelectTrigger>
@@ -70,7 +70,7 @@ export default function ProfilePage() {
         </p>
       </section>
 
-      <section className="mt-4 space-y-4 rounded-xl border border-border bg-surface p-5">
+      <section className="mt-4 space-y-4 rounded-xl border border-border bg-surface p-6">
         <div className="flex items-center justify-between">
           <div>
             <p className="font-medium">Imperial units</p>
@@ -93,7 +93,7 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      <Button asChild variant="outline" className="mt-5 w-full">
+      <Button asChild variant="outline" className="mt-6 w-full">
         <Link href="/onboarding">Replay onboarding</Link>
       </Button>
     </main>

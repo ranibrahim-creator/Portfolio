@@ -18,7 +18,7 @@ export function RestaurantListItem({ item, meal }: { item: RestaurantItem; meal:
   };
 
   return (
-    <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-surface p-5">
+    <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-surface p-6">
       <div className="min-w-0">
         <p className="font-medium">{item.itemName}</p>
         {item.itemNameArabic ? (
@@ -32,7 +32,7 @@ export function RestaurantListItem({ item, meal }: { item: RestaurantItem; meal:
         <button
           type="button"
           onClick={quickAdd}
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-black transition-colors duration-200 ease-out hover:bg-neutral-200"
+          className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black transition-colors duration-200 ease-out hover:bg-neutral-200"
           aria-label={`Add ${item.itemName}`}
         >
           {added ? <span className="text-sm font-semibold">✓</span> : <Plus className="h-4 w-4" />}

@@ -14,11 +14,11 @@ export default function ProgressPage() {
   const delta = Number((latestWeight.kg - startWeight.kg).toFixed(1));
 
   return (
-    <main className="px-5 pb-28 pt-6">
+    <main className="px-6 pb-32 pt-6">
       <h1 className="text-2xl font-semibold">Progress</h1>
-      <p className="mt-1 text-sm text-muted">Last 8 weeks · {user.name}</p>
+      <p className="mt-2 text-sm text-muted">Last 8 weeks · {user.name}</p>
 
-      <section className="mt-6 rounded-xl border border-border bg-surface p-5">
+      <section className="mt-6 rounded-xl border border-border bg-surface p-6">
         <div className="flex items-baseline justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">Weight</p>
@@ -34,11 +34,11 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      <section className="mt-4 rounded-xl border border-border bg-surface p-5">
+      <section className="mt-4 rounded-xl border border-border bg-surface p-6">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">Weekly calorie average</p>
         <p className="mt-1 text-3xl font-semibold tabular-nums">{formatKcal(weeklyAvg)}</p>
         <p className="text-sm text-muted">kcal / day · goal {formatKcal(user.calorieGoal)}</p>
-        <div className="mt-5 flex items-end gap-2">
+        <div className="mt-4 flex items-end gap-2">
           {mockWeeklyCalories.map((day) => {
             const ratio = Math.min(day.kcal / Math.max(user.calorieGoal * 1.25, 1), 1);
             const over = day.kcal > user.calorieGoal;
@@ -53,7 +53,7 @@ export default function ProgressPage() {
                     }}
                   />
                 </div>
-                <p className="text-[11px] text-muted">{day.day}</p>
+                <p className="text-xs text-muted">{day.day}</p>
               </div>
             );
           })}

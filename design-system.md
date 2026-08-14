@@ -55,10 +55,32 @@ Primary actions in dark mode are **white fill, black text** (`bg-white text-blac
 ## Shape, type, motion
 
 - Radius: `rounded-xl` (12px). `--radius: 0.75rem`.
-- Control height: `h-12` for buttons, inputs, selects.
+- Control height: `h-12` for buttons, inputs, selects, icon buttons, and avatars.
 - Type: Inter. Tabular numerals on counts (`tabular-nums`).
 - Motion: 150–200ms, `ease-out`. No bounce.
 - Layout: mobile-first. Product shells may use `max-w-[480px]`; marketing pages may go wider. Do not mix ad-hoc max widths inside a product.
+
+## Spacing and sizing (4px grid)
+
+Use **4 / 8 / 12 / 16 / 24 / 32 / 48** only (`1 2 3 4 6 8 12`). Do not use `5` (20px) or other off-scale steps for layout.
+
+| Use | Size | Class |
+| --- | --- | --- |
+| Page gutter | 24 | `px-6` |
+| Page top | 24 | `pt-6` |
+| Page bottom (tab bar) | 128 | `pb-32` |
+| Card / sheet / dialog padding | 24 | `p-6` |
+| Header → content, section → section | 24 | `mb-6` / `mt-6` |
+| Gap between sibling cards | 16 | `space-y-4` / `gap-4` / `mt-4` |
+| Stack inside a card | 16 | `space-y-4` |
+| Label → control | 8 | `space-y-2` / `mt-2` |
+| List row gap | 8 | `space-y-2` |
+| Inline cluster | 12 | `gap-3` |
+| Control / icon button | 48 | `h-12` / `h-12 w-12` |
+| Nested icon inside an `h-12` field | 32 | `h-8 w-8` |
+| Hero mark | 64 | `h-16 w-16` |
+
+Toggles may stay compact (`h-7`). Chart internals may use `h-2` tracks. Do not mix `p-5`, `px-5`, `h-9`, `h-10`, `h-11`, or `h-14` in product UI.
 
 ## Components
 

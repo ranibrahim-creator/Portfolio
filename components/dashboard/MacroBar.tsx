@@ -30,9 +30,9 @@ export function MacroBar({ label, value, goal, macro, delay = 0 }: Props) {
           <span className="text-muted">/{goal}g</span>
         </p>
       </div>
-      <div className="h-1.5 overflow-hidden rounded-full bg-border">
+      <div className="h-2 overflow-hidden rounded-full bg-border">
         <div
-          className="h-full max-w-full rounded-full transition-[width] duration-300 ease-out"
+          className="h-full max-w-full rounded-full transition-[width] duration-200 ease-out"
           style={{ width: `${ratio * 100}%`, backgroundColor: color, transitionDelay: `${delay}ms` }}
         />
       </div>

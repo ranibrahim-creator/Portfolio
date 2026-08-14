@@ -20,7 +20,7 @@ export default function HomePage() {
   const fat = entries.reduce((sum, entry) => sum + entry.fat, 0);
 
   return (
-    <main className="px-5 pb-28 pt-6">
+    <main className="px-6 pb-32 pt-6">
       <header className="mb-6 flex items-start justify-between gap-3">
         <div>
           <p className="text-sm text-muted">{todayLabel()}</p>
@@ -30,14 +30,14 @@ export default function HomePage() {
         </div>
         <Link
           href="/profile"
-          className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-sm font-semibold"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-border bg-surface text-sm font-semibold"
           aria-label="Open profile"
         >
           {user.name.slice(0, 1)}
         </Link>
       </header>
 
-      <section className="rounded-xl border border-border bg-surface p-5">
+      <section className="rounded-xl border border-border bg-surface p-6">
         <div className="flex justify-center">
           <CalorieRing consumed={consumed} goal={user.calorieGoal} />
         </div>
@@ -52,13 +52,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mt-5 space-y-3">
+      <div className="mt-4 space-y-4">
         {MEALS.map((meal) => (
           <MealSection key={meal} meal={meal} entries={entries.filter((entry) => entry.meal === meal)} />
         ))}
       </div>
 
-      <div className="pointer-events-none sticky bottom-24 z-10 flex justify-end">
+      <div className="pointer-events-none sticky bottom-32 z-10 flex justify-end">
         <Link
           href="/log"
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black transition-colors duration-200 ease-out hover:bg-neutral-200"

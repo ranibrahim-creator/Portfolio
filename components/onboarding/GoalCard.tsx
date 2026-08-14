@@ -18,7 +18,7 @@ export function GoalCard({ label, description, icon: Icon, selected, onSelect }:
       onClick={onSelect}
       animate={{ scale: selected ? 1.05 : 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`flex w-full items-center gap-4 rounded-xl border p-5 text-left transition-colors duration-200 ease-out ${
+      className={`flex w-full items-center gap-4 rounded-xl border p-6 text-left transition-colors duration-200 ease-out ${
         selected ? "border-accent bg-surface" : "border-border bg-surface"
       }`}
     >

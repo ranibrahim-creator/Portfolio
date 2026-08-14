@@ -32,7 +32,7 @@ const SheetContent = React.forwardRef<
     <SheetPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mx-auto max-w-[480px] rounded-t-xl border border-border bg-surface p-5",
+        "fixed inset-x-0 bottom-0 z-50 mx-auto max-w-[480px] rounded-t-xl border border-border bg-surface p-6",
         className,
       )}
       {...props}

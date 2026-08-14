@@ -67,7 +67,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <main className="flex min-h-dvh flex-col px-5 pb-8 pt-6">
+    <main className="flex min-h-dvh flex-col px-6 pb-8 pt-6">
       {step > 0 && (
         <div className="mb-8">
           <ProgressDots total={4} current={step - 1} />

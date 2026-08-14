@@ -25,7 +25,7 @@ export function BottomTabBar() {
               <Link
                 key={tab.href}
                 href={tab.href}
-                className="-mt-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-black shadow-none transition-colors duration-200 ease-out hover:bg-neutral-200"
+                className="-mt-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black shadow-none transition-colors duration-200 ease-out hover:bg-neutral-200"
                 aria-label={tab.label}
               >
                 <Icon className="h-6 w-6" />
