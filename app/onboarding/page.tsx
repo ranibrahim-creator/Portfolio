@@ -81,9 +81,6 @@ export default function OnboardingPage() {
               <Leaf className="h-7 w-7" />
             </div>
             <h1 className="text-2xl font-semibold">Nourish</h1>
-            <p className="mt-3 max-w-[280px] text-base text-muted">
-              Track Egyptian meals in plates, ladles, and loaves — not just grams.
-            </p>
           </div>
           <Button onClick={() => setStep(1)}>Get Started</Button>
         </section>
