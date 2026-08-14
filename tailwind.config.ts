@@ -11,21 +11,47 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
-        surface: "var(--surface)",
-        border: "var(--border)",
         foreground: "var(--foreground)",
-        muted: "var(--muted)",
+        surface: "var(--surface)",
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
+        },
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
         accent: {
           DEFAULT: "#FF9F0A",
           hover: "#E88C00",
+          foreground: "#000000",
         },
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "#ffffff",
+        },
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
         warning: "#E24B4A",
         protein: "#64D2FF",
         carbs: "#FF9F0A",
         fat: "#BF5AF2",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xl: "12px",
