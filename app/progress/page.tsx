@@ -49,7 +49,7 @@ export default function ProgressPage() {
                     className="w-full rounded-md"
                     style={{
                       height: `${Math.max(ratio * 100, 8)}%`,
-                      backgroundColor: over ? "#E24B4A" : "#FF9F0A",
+                      backgroundColor: over ? "#FF3B30" : "#FF6B35",
                     }}
                   />
                 </div>
@@ -98,10 +98,10 @@ function WeightChart() {
           </text>
         </g>
       ))}
-      <path d={area} fill="#FF9F0A" fillOpacity="0.12" />
-      <path d={path} fill="none" stroke="#FF9F0A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={area} fill="#FF6B35" fillOpacity="0.12" />
+      <path d={path} fill="none" stroke="#FF6B35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       {mockWeightTrend.map((point, index) => (
-        <circle key={point.date} cx={x(index)} cy={y(point.kg)} r="3.5" fill="#FF9F0A" />
+        <circle key={point.date} cx={x(index)} cy={y(point.kg)} r="3.5" fill="#FF6B35" />
       ))}
       <text x={x(0)} y={height - 6} className="fill-muted text-[10px]" fontSize="10">
         {mockWeightTrend[0].date}

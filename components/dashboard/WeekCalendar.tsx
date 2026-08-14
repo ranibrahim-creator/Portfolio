@@ -48,8 +48,8 @@ export function WeekCalendar({ todayKcal, goal }: Props) {
                 day.within && "border-transparent bg-white text-black",
                 !day.within && !day.isFuture && day.kcal !== null && "border-warning text-warning",
                 day.isFuture && "border-border text-muted",
-                day.isToday && !day.within && "ring-2 ring-accent ring-offset-2 ring-offset-background",
-                day.isToday && day.within && "ring-2 ring-accent ring-offset-2 ring-offset-background",
+                day.isToday && !day.within && "ring-2 ring-warning ring-offset-2 ring-offset-background",
+                day.isToday && day.within && "ring-2 ring-white ring-offset-2 ring-offset-background",
               )}
               aria-label={ariaFor(day, goal)}
             >

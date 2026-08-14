@@ -10,7 +10,7 @@ type Props = {
 
 const MACRO_COLORS: Record<MacroKey, string> = {
   protein: "#64D2FF",
-  carbs: "#FF9F0A",
+  carbs: "#FF6B35",
   fat: "#BF5AF2",
 };
 

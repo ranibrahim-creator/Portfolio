@@ -27,12 +27,12 @@ When adding UI, reuse existing tokens and shadcn primitives. New hex values are 
 | Border / hairline | `border`, `input` | `#2A3040` |
 | Primary text | `foreground` | `#FFFFFF` |
 | Secondary text | `muted`, `muted-foreground` | `#8B909C` |
-| Accent (charts, remaining, highlights) | `accent`, `ring` | `#FF9F0A` |
-| Accent hover | `accent-hover` | `#E88C00` |
+| Accent (charts, remaining, highlights) | `accent`, `ring` | `#FF6B35` |
+| Accent hover | `accent-hover` | `#E85A24` |
 | Accent on-color | `accent-foreground` | `#000000` |
-| Destructive / warning | `destructive`, `warning` | `#E24B4A` |
+| Destructive / warning | `destructive`, `warning` | `#FF3B30` |
 | Data A (sky) | `protein`, `chart-2` | `#64D2FF` |
-| Data B (orange) | `carbs`, `chart-1` | `#FF9F0A` |
+| Data B (orange) | `carbs`, `chart-1` | `#FF6B35` |
 | Data C (magenta) | `fat`, `chart-3` | `#BF5AF2` |
 
 Light theme lives on `:root` in `app/globals.css`. Page and card must never share the same background value.

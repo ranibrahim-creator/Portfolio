@@ -10,8 +10,8 @@ type Props = {
   animateFromZero?: boolean;
 };
 
-const ACCENT = "#FF9F0A";
-const WARNING = "#E24B4A";
+const ACCENT = "#FF6B35";
+const WARNING = "#FF3B30";
 
 export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true }: Props) {
   const overBudget = consumed > goal;

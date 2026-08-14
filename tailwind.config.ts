@@ -34,8 +34,8 @@ const config: Config = {
           foreground: "var(--muted-foreground)",
         },
         accent: {
-          DEFAULT: "#FF9F0A",
-          hover: "#E88C00",
+          DEFAULT: "#FF6B35",
+          hover: "#E85A24",
           foreground: "#000000",
         },
         destructive: {
@@ -45,9 +45,9 @@ const config: Config = {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
-        warning: "#E24B4A",
+        warning: "#FF3B30",
         protein: "#64D2FF",
-        carbs: "#FF9F0A",
+        carbs: "#FF6B35",
         fat: "#BF5AF2",
       },
       fontFamily: {
