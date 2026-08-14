@@ -1,0 +1,39 @@
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+
+import { BottomTabBar } from "@/components/nav/BottomTabBar";
+import { Providers } from "./providers";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Nourish",
+  description: "Calorie tracking for everyday Egyptian meals.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#FAFAF9",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <Providers>
+          <div className="mx-auto min-h-dvh w-full max-w-[480px] bg-background text-foreground">
+            {children}
+            <BottomTabBar />
+          </div>
+        </Providers>
+      </body>
+    </html>
+  );
+}

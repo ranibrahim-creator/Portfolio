@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafaf9;
+  --surface: #ffffff;
+  --border: #e7e5e4;
+  --foreground: #0a0a0a;
+  --muted: #737373;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --surface: #171717;
+  --border: #262626;
+  --foreground: #fafaf9;
+  --muted: #737373;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: #e7e5e4;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+.dark body {
+  background: #0a0a0a;
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
