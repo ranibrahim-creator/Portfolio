@@ -1,0 +1,24 @@
+---
+description: Portfolio shadcn design system — required for all UI work in this repo
+alwaysApply: true
+---
+
+# shadcn design system
+
+This portfolio has one UI system. Use it for every product and every new screen.
+
+Read and follow `design-system.md` in the repo root before writing UI. Do not invent colors, radii, type, or a second component library.
+
+## Required
+
+- Tokens from `app/globals.css` and `tailwind.config.ts` only. No new hex values.
+- Dark default: page `#000000`, surface/card `#171B24`, border `#2A3040`, text `#FFFFFF` / `#8B909C`.
+- Accent `#FF6B35` (hover `#E85A24`) for highlights and data — not for primary buttons.
+- Destructive/warning `#FF3B30`. Data series: sky `#64D2FF`, orange `#FF6B35`, magenta `#BF5AF2`.
+- Primary actions: `bg-white text-black hover:bg-neutral-200`.
+- Radius `rounded-xl` (12px). Controls `h-12` (icon buttons and avatars too). Font Inter. Motion 150–200ms ease-out.
+- Spacing is a 4px grid: 4 / 8 / 12 / 16 / 24 / 32 / 48 only. Page `px-6 pt-6 pb-32`, cards `p-6`, stacks `space-y-4` or `space-y-2`. No `p-5`, `px-5`, `h-9`, `h-10`, `h-11`, or `h-14`.
+- Primitives live in `components/ui`. Add missing shadcn pieces with `npx shadcn@latest add <name>` (Radix Nova, Lucide, CSS variables — see `components.json`).
+- Use semantic Tailwind classes (`bg-background`, `bg-surface`, `text-muted`, `border-border`, `bg-accent`) never one-off palettes.
+
+If a request conflicts with this system, follow this system unless the user explicitly changes `design-system.md`.
