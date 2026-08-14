@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CalorieRing } from "@/components/dashboard/CalorieRing";
 import { MacroBar } from "@/components/dashboard/MacroBar";
 import { MealSection } from "@/components/dashboard/MealSection";
+import { WeekCalendar } from "@/components/dashboard/WeekCalendar";
 import { useApp } from "@/lib/store";
 import { formatKcal, greeting, todayLabel } from "@/lib/utils";
 import type { MealType } from "@/lib/mockData";
@@ -38,7 +39,9 @@ export default function HomePage() {
           </Link>
         </header>
 
-        <section className="rounded-xl border border-border bg-surface p-6">
+        <WeekCalendar todayKcal={consumed} goal={user.calorieGoal} />
+
+        <section className="mt-4 rounded-xl border border-border bg-surface p-6">
           <div className="flex justify-center">
             <CalorieRing consumed={consumed} goal={user.calorieGoal} />
           </div>

@@ -144,6 +144,16 @@ export const mockWeeklyCalories = [
   { day: "Thu", kcal: 2145 },
 ];
 
+/** Calories logged on past days (today is computed live). All of these sit under the 1700 goal. */
+export const mockPastDayCalories: { daysAgo: number; kcal: number }[] = [
+  { daysAgo: 6, kcal: 1620 },
+  { daysAgo: 5, kcal: 1580 },
+  { daysAgo: 4, kcal: 1640 },
+  { daysAgo: 3, kcal: 1690 },
+  { daysAgo: 2, kcal: 1550 },
+  { daysAgo: 1, kcal: 1680 },
+];
+
 export const unitLabel: Record<FoodUnit, string> = {
   plate: "plate",
   loaf: "loaf",
