@@ -27,7 +27,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <main className="px-5 pb-8 pt-6">
+    <main className="px-5 pb-28 pt-6">
       <h1 className="text-2xl font-semibold">Profile</h1>
       <p className="mt-1 text-sm text-muted">{user.name} · Cairo</p>
 

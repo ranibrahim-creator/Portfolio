@@ -16,9 +16,13 @@ const config: Config = {
         foreground: "var(--foreground)",
         muted: "var(--muted)",
         accent: {
-          DEFAULT: "#059669",
-          hover: "#047857",
+          DEFAULT: "#FF8A5B",
+          hover: "#E86F3F",
         },
+        warning: "#E24B4A",
+        protein: "#2DC9A6",
+        carbs: "#9B8AFB",
+        fat: "#F5B942",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],

@@ -13,6 +13,7 @@ import {
   type Food,
   type LogEntry,
   type MealType,
+  type RestaurantItem,
   type User,
 } from "@/lib/mockData";
 import { createId } from "@/lib/utils";
@@ -24,6 +25,7 @@ type AppState = {
   favorites: string[];
   updateUser: (patch: Partial<User>) => void;
   addFood: (food: Food, servings: number, meal: MealType, mode: "local" | "grams") => void;
+  addRestaurantItem: (item: RestaurantItem, meal: MealType) => void;
   removeEntry: (id: string) => void;
   toggleFavorite: (foodId: string) => void;
 };
@@ -64,6 +66,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
           },
         ]);
         setRecents((current) => [food.id, ...current.filter((id) => id !== food.id)].slice(0, 8));
+      },
+      addRestaurantItem: (item, meal) => {
+        setEntries((current) => [
+          ...current,
+          {
+            id: createId(),
+            foodId: item.id,
+            name: item.itemName,
+            nameArabic: item.itemNameArabic ?? "",
+            meal,
+            servings: 1,
+            unitLabel: item.restaurantName,
+            calories: item.calories,
+            protein: item.protein,
+            carbs: item.carbs,
+            fat: item.fat,
+          },
+        ]);
       },
       removeEntry: (id) => setEntries((current) => current.filter((entry) => entry.id !== id)),
       toggleFavorite: (foodId) =>

@@ -10,12 +10,18 @@ type Props = {
   animateFromZero?: boolean;
 };
 
+const ACCENT = "#FF8A5B";
+const WARNING = "#E24B4A";
+
 export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true }: Props) {
+  const overBudget = consumed > goal;
   const progress = goal <= 0 ? 0 : Math.min(consumed / goal, 1);
   const remaining = Math.max(0, Math.round(goal - consumed));
+  const overBy = Math.max(0, Math.round(consumed - goal));
   const stroke = 14;
   const radius = (size - stroke) / 2;
   const circumference = 2 * Math.PI * radius;
+  const fill = overBudget ? WARNING : ACCENT;
 
   const spring = useSpring(animateFromZero ? 0 : progress, {
     stiffness: 80,
@@ -46,7 +52,7 @@ export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#059669"
+          stroke={fill}
           strokeWidth={stroke}
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -54,9 +60,18 @@ export function CalorieRing({ consumed, goal, size = 220, animateFromZero = true
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Remaining</p>
-        <p className="text-4xl font-bold tabular-nums leading-none">{remaining.toLocaleString()}</p>
-        <p className="mt-1 text-sm text-muted">kcal</p>
+        {overBudget ? (
+          <>
+            <p className="text-3xl font-bold tabular-nums leading-none text-warning">{overBy.toLocaleString()} over</p>
+            <p className="mt-1 text-sm text-warning">kcal</p>
+          </>
+        ) : (
+          <>
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Remaining</p>
+            <p className="text-4xl font-bold tabular-nums leading-none">{remaining.toLocaleString()}</p>
+            <p className="mt-1 text-sm text-muted">kcal</p>
+          </>
+        )}
       </div>
     </div>
   );

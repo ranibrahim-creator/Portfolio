@@ -7,7 +7,7 @@ import { AppProvider } from "@/lib/store";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <AppProvider>{children}</AppProvider>
     </ThemeProvider>
   );

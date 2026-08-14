@@ -1,13 +1,13 @@
 "use client";
 
-import { Home, Plus, UserRound } from "lucide-react";
+import { Home, Plus, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const tabs = [
   { href: "/", label: "Home", icon: Home },
   { href: "/log", label: "Log", icon: Plus, elevated: true },
-  { href: "/profile", label: "Profile", icon: UserRound },
+  { href: "/progress", label: "Progress", icon: TrendingUp },
 ];
 
 export function BottomTabBar() {

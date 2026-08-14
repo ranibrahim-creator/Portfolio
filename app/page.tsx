@@ -21,11 +21,20 @@ export default function HomePage() {
 
   return (
     <main className="px-5 pb-28 pt-6">
-      <header className="mb-6">
-        <p className="text-sm text-muted">{todayLabel()}</p>
-        <h1 className="text-2xl font-semibold">
-          {greeting()}, {user.name}
-        </h1>
+      <header className="mb-6 flex items-start justify-between gap-3">
+        <div>
+          <p className="text-sm text-muted">{todayLabel()}</p>
+          <h1 className="text-2xl font-semibold">
+            {greeting()}, {user.name}
+          </h1>
+        </div>
+        <Link
+          href="/profile"
+          className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-sm font-semibold"
+          aria-label="Open profile"
+        >
+          {user.name.slice(0, 1)}
+        </Link>
       </header>
 
       <section className="rounded-xl border border-border bg-surface p-5">
@@ -37,9 +46,9 @@ export default function HomePage() {
           <span className="tabular-nums">{formatKcal(user.calorieGoal)}</span>
         </p>
         <div className="mt-6 space-y-4">
-          <MacroBar label="Protein" value={protein} goal={user.proteinGoal} delay={0} />
-          <MacroBar label="Carbs" value={carbs} goal={user.carbsGoal} delay={80} />
-          <MacroBar label="Fat" value={fat} goal={user.fatGoal} delay={160} />
+          <MacroBar label="Protein" value={protein} goal={user.proteinGoal} macro="protein" delay={0} />
+          <MacroBar label="Carbs" value={carbs} goal={user.carbsGoal} macro="carbs" delay={80} />
+          <MacroBar label="Fat" value={fat} goal={user.fatGoal} macro="fat" delay={160} />
         </div>
       </section>
 
